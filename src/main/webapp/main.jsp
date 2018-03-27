@@ -19,14 +19,15 @@
 <div>
 
 	<div id="header" style="height:18%;width:100%">
+	
 		<jsp:include page="header.jsp" />
 	</div>
 	
 	<div id="body" style="height:77%;width:100%">
 
- 		<jsp:include page="product.jsp" />
+		<jsp:include page="product.jsp" />
 				
-		</div>
+	
 	</div>
 	<div id="footer"  style="height:5%;width:100%">
 		<jsp:include page="footer.jsp" />
