@@ -10,7 +10,7 @@
 		<a href="#id1" class="flipper-container">
 		  <div id="id1" class="flipper">
 			<div class="front-face" onclick="showmedical()" data-icon="" href="#"><span >Medical</span></div>
-			<div class="back-face" data-icon="">Medical</div>
+			<div class="back-face" data-icon="">Medical </div>
 		  </div>
 		</a>
 		</div>
