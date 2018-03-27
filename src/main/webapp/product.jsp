@@ -42,8 +42,8 @@
 	
 	
 	<div id="medical_plans" style="display:block;float:left; height:100%;width:85%">
-		<div id="filters" style="height:7%;width:100%">
-			<span>Premium:</span>
+		<div id="filters" style="height:5%;width:100%">
+			<span>Monthly Premium:</span>
 				<span class="custom-dropdown">
 					<select >
 						<option>$0 To $50</option>
@@ -73,7 +73,7 @@
 				</span>
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
-		<div id="pricing-table" class="clear" style="height:93%;width:100%">
+		<div id="pricing-table" class="clear" style="height:95%;width:100%">
 			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
 				<h3>Medical Value<span>$66.90</span></h3>
 				 
@@ -126,7 +126,7 @@
 
 
 	<div id="dental_plans" style="display:none;float:left; height:100%;width:85%">
-		<div id="filters" style="height:7%;width:100%">
+		<div id="filters" style="height:5%;width:100%">
 			<span>Monthly Premium:</span>
 				<span class="custom-dropdown">
 					<select >
@@ -157,7 +157,7 @@
 				</span>
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
-		<div id="pricing-table" class="clear" style="height:93%;width:100%">
+		<div id="pricing-table" class="clear" style="height:95%;width:100%">
 			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
 				<h3>Dental Primary<span>$20.68</span></h3>
 			  	<div class="Addtocart" id= "DenBtn1" onclick="showDentalModal()" href="">Add to Cart</div>
@@ -206,7 +206,7 @@
 
 
 	<div id="vision_plans" style="display:none;float:left; height:100%;width:85%" >
-		<div id="filters" style="height:7%;width:100%">
+		<div id="filters" style="height:5%;width:100%">
 			<span>Monthly Premium:</span>
 				<span class="custom-dropdown">
 					<select >
@@ -237,7 +237,7 @@
 				</span>
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
-		<div id="pricing-table" class="clear" style="height:93%;width:100%">
+		<div id="pricing-table" class="clear" style="height:95%;width:100%">
 			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
 				<h3>Vision Basic<span>$11.40</span></h3>
 			   <div class="Addtocart" id= "VisBtn1" onclick="showVisionModal()" href="">Add to Cart</div>
