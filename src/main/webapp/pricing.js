@@ -7,6 +7,15 @@ function passiveproduct(ele)
 	ele.id="";
 }
 
+function showplans()
+{
+    
+	showmedical()
+	showdental()
+	showvision()
+
+	
+}
 function showmedical(){
 
 		document.getElementById("medical_plans").style.display="block";

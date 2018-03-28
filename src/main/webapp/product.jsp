@@ -1,13 +1,21 @@
 <script src="pricing.js" type="text/javascript"></script>
-<script src="cart.js" type="text/javascript"></script>
+<script src="Planview_Log.js" type="text/javascript"></script>
 <script src="filters.js" type="text/javascript"></script>
+<link  rel="stylesheet" type="text/css" href="pricing.css"></link>
+<link  rel="stylesheet" type="text/css" href="cart.css"></link>
+<link  rel="stylesheet" type="text/css" href="filters.css"></link>
+<script src="cart.js" type="text/javascript"></script>
+<jsp:include page="cart_modal.jsp"/>
 
 <link rel="stylesheet" type="text/css" href="filters.css">
 <link  rel="stylesheet" type="text/css" href="pricing.css"></link>
 
-<jsp:include page="cart_modal.jsp"/>
+<div>
 
-
+<div id="header" style="height:18%;width:100%">
+		<jsp:include page="header.jsp" />
+		</div>
+	
 <div id="product-search" style="height:100%;width:100%;" >
 	
 	<div id="filter" style="float:left;height:100%;width:15%">
@@ -283,8 +291,10 @@
 	</div>
 
 	
-	
+	</div>
+	<div id="footer"  style="height:5%;width:100%">
+		<jsp:include page="footer.jsp" />
 
 </div>
-
+</div>
 

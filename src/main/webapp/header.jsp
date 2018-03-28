@@ -42,7 +42,8 @@
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
-					<div  class="contact-button">PLANS<span>PLANS</span></div>
+					<div onclick="showplansModal()" class="contact-button">PLANS<span>PLANS</span></div>
+		
 				</div>
 				<div style="float:left;width:0.1%;height:100%"></div>
 				<div style="float:left;width:20%;height:100%"  >
