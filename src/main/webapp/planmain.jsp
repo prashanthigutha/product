@@ -1,3 +1,4 @@
+
 <style>
 
 * {
@@ -20,11 +21,11 @@
 
 	<div id="header" style="height:18%;width:100%">
 		<iframe src="http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/header.jsp" style="height:100%;width:100%"></iframe>
-		<%--<jsp:include page="header.jsp" />--%>
+		<%-- <jsp:include page="header.jsp" />--%>
 	</div>
 	
 	<div id="body" style="height:77%;width:100%">
-		<jsp:include page="Planview_Login.jsp" />
+		
  		<jsp:include page="product.jsp" />
 				
 
@@ -33,6 +34,8 @@
 	<div id="footer"  style="height:5%;width:100%">
 	
 		<iframe src="http://ec2-18-188-27-184.us-east-2.compute.amazonaws.com:8080/footer.jsp" style="height:100%;width:100%"></iframe>
-		<%--<jsp:include page="footer.jsp" />--%>
+		<%-- <jsp:include page="footer.jsp" />--%>
 	</div>
 </div> 
+
+</body>

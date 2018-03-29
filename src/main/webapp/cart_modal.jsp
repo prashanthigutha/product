@@ -22,7 +22,7 @@
 			 
 		</div>
 		 <div class="modal-footer">
-      	  		<input type=button value="Checkout">
+      	  		<input type=button onclick="location.href='http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp';" value="Checkout">
 			</div>
 	</div>
 </div>
@@ -45,7 +45,7 @@
 		</div>
 		 <div class="modal-footer">
       	  
-      	 <input type=button value="Checkout">
+      	 <input type=button onclick="location.href='http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp';" value="Checkout">
 				
       	</div>
 	</div>
@@ -70,7 +70,7 @@
 		</div>
 		 <div class="modal-footer">
       	 
-				<input type=button value="Checkout">
+				<input type=button onclick="location.href='http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp';" value="Checkout">
 				 
 			
       	</div>
