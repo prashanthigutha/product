@@ -27,4 +27,19 @@ function showplansModal(){
 	document.getElementById("planview_Modal").style.display="block";
 }
 
+function emptycheck()
+{
+		
+	var email=document.getElementById("mail").value;
+	var zip=document.getElementById("Zipcode").value;
+	var isitnum=parseInt(zip);
+	if((email=="")||(zip=="") )
+		alert("mandatory fields should not be empty");
+	else if(isNaN(isitnum))
+		alert("Zipcode required is number");
+	
+	
+	
+		
+	}
 

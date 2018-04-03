@@ -11,21 +11,21 @@
 		<br/>
 		<div class="modal-body">
 			<div>
-<form action="/planmain.jsp" get=post>
+<form action="details">
   <div>
     <label for="mail">E-mail:</label>
-    <input type="email" id="mail" name="user_email" /><br>
+    <input type="email" id="mail" name="user_email"  /><br>
   </div>
    <div>
     <label for="zcode">Zipcode:</label>
-    <input type="text" id="Zipcode" name="zipcode" />
+    <input type="text" id="Zipcode" name="zipcode"  />
   </div>
 			
 			 
 			 
 		</div>
 		 <div class="modal-footer">
-      	  <input type="submit" value="Ok" onclick="main.jsp">
+      	  <input type="submit" value="Ok" onclick="emptycheck()">
 				
       	</div>
 	</div>

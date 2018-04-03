@@ -7,7 +7,7 @@
 <script src="cart.js" type="text/javascript"></script>
 <jsp:include page="cart_modal.jsp"/>
 
-
+<%@ taglib uri="/struts-tags" prefix="s" %>
 
 
 
@@ -18,6 +18,7 @@
 	<div id="filter" style="float:left;height:100%;width:15%">
 		
 		<div id="category" style="height:10%;width:100%"></div>
+		
 		<div class="catg" >
 		<a href="#id1" class="flipper-container">
 		  <div id="id1" class="flipper">
@@ -26,6 +27,7 @@
 		  </div>
 		</a>
 		</div>
+		
 		<div class="catg">
 		<a href="#id2" class="flipper-container">
 		  <div id="id2" class="flipper">
@@ -46,7 +48,7 @@
 
 	
 	
-	<div id="medical_plans" style="display:block;float:left; height:100%;width:85%">
+	<div id="medical_plans" style="display:none;float:left; height:100%;width:85%">
 		<div id="filters" style="height:5%;width:100%">
 			<span>Monthly Premium:</span>
 				<span class="custom-dropdown">
@@ -79,52 +81,30 @@
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
 		<div id="pricing-table" class="clear" style="height:95%;width:100%">
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Medical Value<span>$66.90</span></h3>
-				 
-					<div class="Addtocart" id="medBtn1" href="" onclick="showMedicalModal()">Add to Cart</div> 
-				   
-				<ul>
-					<li><b>60%</b> Coinsurance</li>
-					<li><b>12500</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>1000</b> Out Of Pocket Maximum</li>			
-				</ul> 
+			<div id="pricing-table" class="clear" style="display:block;height:95%;width:100%">
+				<s:iterator value="medicalplanList" var="plans">
+					<div class="plan" onmouseover="activeproduct(this)"
+						onmouseout="passiveproduct(this)">
+						<h3>
+							<s:property value="#plans.planname" />
+							<span>$<s:property value="#plans.premiumamnt" /></span>
+						</h3>
+						<div class="Addtocart" id="medBtn1" href=""
+							onclick="showMedicalModal()">Add to Cart</div>
+						<ul>
+							<li><b><s:property value="#plans.Coinsurance" /></b>
+								Coinsurance</li>
+							<li><b><s:property value="#plans.Deductible" /></b>
+								Deductible</li>
+							<li><b><s:property value="#plans.Paymentmethod" /></b>
+								Payment method</li>
+							<li><b><s:property value="#plans.Maxoutpkt" /></b> Out Of Pocket
+								Maximum</li>
+						</ul>
+					</div>
+					</s:iterator>
 			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)" >
-				<h3>Medical Value Plus<span>$132.20</span></h3>
-				<div class="Addtocart" id= "MedBtn2" href="" onclick="showMedicalModal()">Add to Cart</div>  
-					
-				
-				<ul>
-					<li><b>70%</b> Coinsurance</li>
-					<li><b>5000</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>5000</b> Out Of Pocket Maximum</li>					
-				</ul>    
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Medicare<span>$74</span></h3>
-				<div class="Addtocart" id= "MedBtn3" href="" onclick="showMedicalModal()">Add to Cart</div>
-									  
-				<ul>
-					<li><b>95%</b> Coinsurance</li>
-					<li><b>1000</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>3500</b> Out Of Pocket Maximum</li>		
-				</ul>
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Medicaid<span>$17</span></h3>
-			<div class="Addtocart" id= "MedBtn4" href="" onclick="showMedicalModal()">Add to Cart</div>
-					  
-					<ul>
-					<li><b>90%</b> Coinsurance</li>
-					<li><b>1000</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>2500</b> Out Of Pocket Maximum</li>			
-				</ul>
-			</div> 	
+			
 
 		</div>
 	</div>
@@ -163,48 +143,27 @@
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
 		<div id="pricing-table" class="clear" style="height:95%;width:100%">
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Dental Primary<span>$20.68</span></h3>
-			  	<div class="Addtocart" id= "DenBtn1" onclick="showDentalModal()" href="">Add to Cart</div>
-					
-				<ul>
-					<li><b>70%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>1000</b> Out Of Pocket Maximum</li>			
-				</ul> 
-			</div>
-			
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)" >
-				<h3>Dental Essential<span>$34.93</span></h3>
-				<div class="Addtocart" id= "DenBtn2" onclick="showDentalModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>70%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>800</b> Out Of Pocket Maximum</li>			
-				</ul>    
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Dental Premier <span>$41.06</span></h3>
-				<div class="Addtocart" id= "DenBtn3" onclick="showDentalModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>80%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>600</b> Out Of Pocket Maximum</li>				
-				</ul>
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Dental Elite<span>$55.20</span></h3>
-			 <div class="Addtocart" id= "DenBtn4"  onclick="showDentalModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>90%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>500</b> Out Of Pocket Maximum</li>				
-				</ul>
-			</div> 	
+			<s:iterator value="dentalplanList" var="plans">
+					<div class="plan" onmouseover="activeproduct(this)"
+						onmouseout="passiveproduct(this)">
+						<h3>
+							<s:property value="#plans.planname" />
+							<span>$<s:property value="#plans.premiumamnt" /></span>
+						</h3>
+						<div class="Addtocart" id="medBtn1" href=""
+							onclick="showMedicalModal()">Add to Cart</div>
+						<ul>
+							<li><b><s:property value="#plans.Coinsurance" /></b>
+								Coinsurance</li>
+							<li><b><s:property value="#plans.Deductible" /></b>
+								Deductible</li>
+							<li><b><s:property value="#plans.Paymentmethod" /></b>
+								Payment method</li>
+							<li><b><s:property value="#plans.Maxoutpkt" /></b> Out Of Pocket
+								Maximum</li>
+						</ul>
+					</div>
+					</s:iterator>
 		</div>
 
 	</div>
@@ -243,47 +202,27 @@
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
 		<div id="pricing-table" class="clear" style="height:95%;width:100%">
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Vision Basic<span>$11.40</span></h3>
-			   <div class="Addtocart" id= "VisBtn1" onclick="showVisionModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>60%</b> Coinsurance</li>
-					<li><b>100</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>1000</b> Out Of Pocket Maximum</li>			
-				</ul> 
-			</div>
-			
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)" >
-				<h3>Vision Prime<span>$15.70</span></h3>
-				<div class="Addtocart" id= "VisBtn2" onclick="showVisionModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>60%</b> Coinsurance</li>
-					<li><b>100</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>800</b> Out Of Pocket Maximum</li>			
-				</ul>    
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Vision Choice <span>$25.50</span></h3>
-				<div class="Addtocart" id= "VisBtn3" onclick="showVisionModal()" href="">Add to Cart</div>
-				<ul>
-					<li><b>70%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>600</b> Out Of Pocket Maximum</li>				
-				</ul>
-			</div>
-			<div class="plan" onmouseover="activeproduct(this)" onmouseout="passiveproduct(this)">
-				<h3>Vision Elite<span>$37.80</span></h3>
-			    <div class="Addtocart" id= "VisBtn4" onclick="showVisionModal()" href="">Add to Cart</div>
-					<ul>
-					<li><b>80%</b> Coinsurance</li>
-					<li><b>50</b> Deductible</li>
-					<li><b>Monthly</b> Payment method</li>
-					<li><b>500</b> Out Of Pocket Maximum</li>				
-				</ul>
-			</div> 	
+			<s:iterator value="visionplanList" var="plans">
+					<div class="plan" onmouseover="activeproduct(this)"
+						onmouseout="passiveproduct(this)">
+						<h3>
+							<s:property value="#plans.planname" />
+							<span>$<s:property value="#plans.premiumamnt" /></span>
+						</h3>
+						<div class="Addtocart" id="medBtn1" href=""
+							onclick="showMedicalModal()">Add to Cart</div>
+						<ul>
+							<li><b><s:property value="#plans.Coinsurance" /></b>
+								Coinsurance</li>
+							<li><b><s:property value="#plans.Deductible" /></b>
+								Deductible</li>
+							<li><b><s:property value="#plans.Paymentmethod" /></b>
+								Payment method</li>
+							<li><b><s:property value="#plans.Maxoutpkt" /></b> Out Of Pocket
+								Maximum</li>
+						</ul>
+					</div>
+					</s:iterator>
 		</div>
 	</div>
 
