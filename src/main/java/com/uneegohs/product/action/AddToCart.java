@@ -5,6 +5,6 @@ public class AddToCart {
 	
 	public String execute()
 	{
-		return "failure";
+		return "success";
 	}
 }

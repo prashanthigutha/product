@@ -16,7 +16,14 @@ public class DisplayPlans extends ActionSupport{
 	ArrayList<PlanDetailsDto> visionplanList;
 	
 	private int zipcode;
+	private String email;
 	
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public int getZipcode() {
 		return zipcode;
 	}
@@ -160,6 +167,7 @@ public String displayPlans ()
 	populateMedicalPlan();
 	populateDentalPlan();
 	populateVisionPlan();
+	
 	
 
 	if(zipcode==75062)

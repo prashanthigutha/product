@@ -48,7 +48,7 @@
 
 	
 	
-	<div id="medical_plans" style="display:none;float:left; height:100%;width:85%">
+	<div id="medical_plans" style="display:block; float:left; height:100%;width:85%">
 		<div id="filters" style="height:5%;width:100%">
 			<span>Monthly Premium:</span>
 				<span class="custom-dropdown">
@@ -80,7 +80,7 @@
 				</span>
 				<span><input type="submit" value="Apply" style="height:30px; width:100px;background-color: #1ABC9C;color: #fff"/></span>
 			</div>
-		<div id="pricing-table" class="clear" style="height:95%;width:100%">
+		
 			<div id="pricing-table" class="clear" style="display:block;height:95%;width:100%">
 				<s:iterator value="medicalplanList" var="plans">
 					<div class="plan" onmouseover="activeproduct(this)"
@@ -107,7 +107,7 @@
 			
 
 		</div>
-	</div>
+	
 
 
 	<div id="dental_plans" style="display:none;float:left; height:100%;width:85%">

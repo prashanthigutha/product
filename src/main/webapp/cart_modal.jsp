@@ -49,8 +49,9 @@
 		</div>
 		 <div class="modal-footer">
       	  
-      	 <input type=button onclick="location.href='http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp';" value="Checkout">
-				
+      	  <form action="addcart">
+      	 <input type="submit"  value="Checkout">
+		</form>
       	</div>
 	</div>
 </div>
@@ -73,9 +74,9 @@
 			
 		</div>
 		 <div class="modal-footer">
-      	 
-				<input type=button onclick="location.href='http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp';" value="Checkout">
-				 
+      	 	<form action="addcart">
+				<input type="submit" value="Checkout">
+			</form>	 
 			
       	</div>
 	</div>
