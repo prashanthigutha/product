@@ -14,19 +14,22 @@
          
          <action name="details" class="com.uneegohs.product.action.DisplayPlans" method="displayPlans">
       <result name="success" >/planmain.jsp</result>
-      <result name="failure">/noplans.jsp</result> 
+      <result name="failure">/main.jsp</result> 
          </action>
     
-   
+      <!-- <action name="getplanswithfilters" class="com.uneegohs.product.action.DisplayPlansWithFilters" method="displayPlans">
+      <result name="success" >/planmain.jsp</result>
+      
+         </action>  -->
     
     
    
     
-     <action name="addcart" class="com.uneegohs.product.action.AddToCart" method="execute">
+    <action name="addcart" class="com.uneegohs.product.action.AddToCart" method="execute">
      
       <result name="success" type="redirect">http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp</result>
-       <result name="failure" >planmain.jsp</result>
-    </action>
+      <!--  <result name="failure" >planmain.jsp</result> -->
+    </action> 
      
   </package>
 </struts>

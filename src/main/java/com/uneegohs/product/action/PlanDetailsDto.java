@@ -4,33 +4,28 @@ public class PlanDetailsDto {
 
 	
 	private String planname;
-	private float Coinsurance;
-	private float Deductible;
+	
+	private String Coinsurance;
+	private String Deductible;
 	private String Paymentmethod;
-	private float  Maxoutpkt;
-	private float premiumamnt;
-	public float getPremiumamnt() {
-		return premiumamnt;
-	}
-	public void setPremiumamnt(float premiumamnt) {
-		this.premiumamnt = premiumamnt;
-	}
+	private String  Maxoutpkt;
+	private String premiumamnt;
 	public String getPlanname() {
 		return planname;
 	}
 	public void setPlanname(String planname) {
 		this.planname = planname;
 	}
-	public float getCoinsurance() {
+	public String getCoinsurance() {
 		return Coinsurance;
 	}
-	public void setCoinsurance(float coinsurance) {
+	public void setCoinsurance(String coinsurance) {
 		Coinsurance = coinsurance;
 	}
-	public float getDeductible() {
+	public String getDeductible() {
 		return Deductible;
 	}
-	public void setDeductible(float deductible) {
+	public void setDeductible(String deductible) {
 		Deductible = deductible;
 	}
 	public String getPaymentmethod() {
@@ -39,12 +34,21 @@ public class PlanDetailsDto {
 	public void setPaymentmethod(String paymentmethod) {
 		Paymentmethod = paymentmethod;
 	}
-	public float getMaxoutpkt() {
+	public String getMaxoutpkt() {
 		return Maxoutpkt;
 	}
-	public void setMaxoutpkt(float maxoutpkt) {
+	public void setMaxoutpkt(String maxoutpkt) {
 		Maxoutpkt = maxoutpkt;
 	}
+	public String getPremiumamnt() {
+		return premiumamnt;
+	}
+	public void setPremiumamnt(String premiumamnt) {
+		this.premiumamnt = premiumamnt;
+	}
+	
+	
+	
 	
 	
 }

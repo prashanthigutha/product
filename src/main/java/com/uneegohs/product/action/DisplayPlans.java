@@ -2,9 +2,11 @@ package com.uneegohs.product.action;
 
 import org.springframework.stereotype.Component;
 
+import com.jdbc.DatabaseConnection;
+import com.jdbc.UsersTable;
 import com.opensymphony.xwork2.ActionSupport;
 
-
+import java.sql.Connection;
 import java.util.ArrayList;
 
 @Component
@@ -15,7 +17,7 @@ public class DisplayPlans extends ActionSupport{
 	ArrayList<PlanDetailsDto> dentalplanList;
 	ArrayList<PlanDetailsDto> visionplanList;
 	
-	private int zipcode;
+	private String zipcode;
 	private String email;
 	
 	public String getEmail() {
@@ -24,10 +26,10 @@ public class DisplayPlans extends ActionSupport{
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
-	public void setZipcode(int zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 	
@@ -54,123 +56,89 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 	}
 	
 	
-	private void populateMedicalPlan()
+	private void populateMedicalPlan() throws Exception
 	{
-		medicalplanList = new ArrayList<PlanDetailsDto>();
+		Connection conn=null;
+		try{
+		conn=DatabaseConnection.getDBConnection();
+		conn.setAutoCommit(false);
+
+		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
 		
-		PlanDetailsDto a=new PlanDetailsDto();
-		a.setPlanname("Medical Value");
-		a.setPaymentmethod("Monthly");
-		a.setCoinsurance(60);
-		a.setDeductible(12500);
-		a.setMaxoutpkt(1000);
-		a.setPremiumamnt(66.90f);
 		
-		PlanDetailsDto b=new PlanDetailsDto();
-		b.setPlanname("Medical Value plus");
-		b.setPaymentmethod("Monthly");
-		b.setCoinsurance(60);
-		b.setDeductible(12500);
-		b.setMaxoutpkt(1000);
-		b.setPremiumamnt(66.90f);
+				medicalplanList=UsersTable.getPlanDetails("Medical", conn);
 		
-		PlanDetailsDto c=new PlanDetailsDto();
-		c.setPlanname("Medicare");
-		c.setPaymentmethod("Monthly");
-		c.setCoinsurance(60);
-		c.setDeductible(12500);
-		c.setMaxoutpkt(1000);
-		c.setPremiumamnt(66.90f);
-		
-		medicalplanList.add(a);
-		medicalplanList.add(b);
-		medicalplanList.add(c);
-		
+		    conn.commit();
+		}catch(Exception e)
+		{
+		conn.rollback();
+		}
+		finally{
+		conn.close();
+		}
 		
 
 	}
 	
 	
-	private void populateDentalPlan()
+	private void populateDentalPlan() throws Exception
 	{
-		dentalplanList = new ArrayList<PlanDetailsDto>();
+		Connection conn=null;
+		try{
+		conn=DatabaseConnection.getDBConnection();
+		conn.setAutoCommit(false);
+
+		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
 		
-		PlanDetailsDto a=new PlanDetailsDto();
-		a.setPlanname("Dental Value");
-		a.setPaymentmethod("Monthly");
-		a.setCoinsurance(60);
-		a.setDeductible(12500);
-		a.setMaxoutpkt(1000);
-		a.setPremiumamnt(66.90f);
 		
-		PlanDetailsDto b=new PlanDetailsDto();
-		b.setPlanname("Dental Value plus");
-		b.setPaymentmethod("Monthly");
-		b.setCoinsurance(60);
-		b.setDeductible(12500);
-		b.setMaxoutpkt(1000);
-		b.setPremiumamnt(66.90f);
+				dentalplanList=UsersTable.getPlanDetails("Dental", conn);
 		
-		PlanDetailsDto c=new PlanDetailsDto();
-		c.setPlanname("Dental");
-		c.setPaymentmethod("Monthly");
-		c.setCoinsurance(60);
-		c.setDeductible(12500);
-		c.setMaxoutpkt(1000);
-		c.setPremiumamnt(66.90f);
+		    conn.commit();
+		}catch(Exception e)
+		{
+		conn.rollback();
+		}
+		finally{
+		conn.close();
+		}
+
+	}
+	private void populateVisionPlan() throws Exception
+	{
+		Connection conn=null;
+		try{
+		conn=DatabaseConnection.getDBConnection();
+		conn.setAutoCommit(false);
+
+		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
 		
-		dentalplanList.add(a);
-		dentalplanList.add(b);
-		dentalplanList.add(c);
 		
+				visionplanList=UsersTable.getPlanDetails("Vision", conn);
+		
+		    conn.commit();
+		}catch(Exception e)
+		{
+		conn.rollback();
+		}
+		finally{
+		conn.close();
+		}
 		
 
 	}
-	private void populateVisionPlan()
-	{
-		visionplanList = new ArrayList<PlanDetailsDto>();
-		
-		PlanDetailsDto a=new PlanDetailsDto();
-		a.setPlanname("Vision Value");
-		a.setPaymentmethod("Monthly");
-		a.setCoinsurance(60);
-		a.setDeductible(12500);
-		a.setMaxoutpkt(1000);
-		a.setPremiumamnt(66.90f);
-		
-		PlanDetailsDto b=new PlanDetailsDto();
-		b.setPlanname("Vision Value plus");
-		b.setPaymentmethod("Monthly");
-		b.setCoinsurance(60);
-		b.setDeductible(12500);
-		b.setMaxoutpkt(1000);
-		b.setPremiumamnt(66.90f);
-		
-		PlanDetailsDto c=new PlanDetailsDto();
-		c.setPlanname("Vision");
-		c.setPaymentmethod("Monthly");
-		c.setCoinsurance(60);
-		c.setDeductible(12500);
-		c.setMaxoutpkt(1000);
-		c.setPremiumamnt(66.90f);
-		
-		visionplanList.add(a);
-		visionplanList.add(b);
-		visionplanList.add(c);
-		
-		
-
-	}
-public String displayPlans ()
+public String displayPlans () 
 	{
 		
+	try{
 	populateMedicalPlan();
 	populateDentalPlan();
 	populateVisionPlan();
 	
-	
+	}catch(Exception e){
+		e.printStackTrace();
+	}
 
-	if(zipcode==75062)
+	if(zipcode.length()==5)
 		return "success";
 	else
 		return "failure";

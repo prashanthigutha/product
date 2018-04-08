@@ -1,7 +1,7 @@
 <!-- Modal content -->
 <script src="pricing.js" type="text/javascript"></script>
-<link  rel="stylesheet" type="text/css" href="cart.css"></link> 
-<script src="cart.js" type="text/javascript"></script>
+<link  rel="stylesheet" type="text/css" href="plan_pop.css"></link> 
+<script src="plan_pop.js" type="text/javascript"></script>
 <div id="Medical_Modal" style="display:none;" class="modal">
 	<div class="modal-content"> 
 		<div class="modal-header">

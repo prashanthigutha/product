@@ -1,4 +1,5 @@
-/* JS for demo only */
+
+/* JS for demo only 
 var colors = ['1abc9c', '2c3e50', '2980b9', '7f8c8d', 'f1c40f', 'd35400', '27ae60'];
 
 colors.each(function (color) {
@@ -14,8 +15,8 @@ $$('.color-picker')[0].on('click', '.square', function(event, square) {
   });
 });
 
-/*
+
  * Original version at
  * http://red-team-design.com/making-html-dropdowns-not-suck
- *<script src='http://ajax.googleapis.com/ajax/libs/prototype/1.7.1/prototype.js'></script>
+ *
  */

@@ -1,6 +1,7 @@
 // Get the modal
 window.onload = function(){ 
 var pmodal = document.getElementById('planview_Modal');
+
 var myWindow;
 
 // Get the <span> element that closes the modal
@@ -23,11 +24,12 @@ window.onclick = function(event) {
 }
 }
 
+
 function showplansModal(){
 	document.getElementById("planview_Modal").style.display="block";
 }
 
-function emptycheck()
+/*function emptycheck()
 {
 		
 	var email=document.getElementById("mail").value;
@@ -42,4 +44,28 @@ function emptycheck()
 	
 		
 	}
+*/
 
+
+
+$(document).ready(function(){
+$(".modal-footer").click(emptycheck);
+
+});
+
+function emptycheck()
+{
+		
+	var email=$("#mail").val();
+	var zip=$("#Zipcode").val();
+	var isitnum=parseInt(zip);
+	if((email=="")||(zip=="") )
+		alert("mandatory fields should not be empty");
+	
+	else if(isNaN(isitnum))
+		alert("Zipcode required is number");
+	
+	
+	
+		
+}
