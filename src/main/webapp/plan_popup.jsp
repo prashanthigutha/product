@@ -1,5 +1,5 @@
 <!-- Modal content -->
-<script src="pricing.js" type="text/javascript"></script>
+<!-- <script src="pricing.js" type="text/javascript"></script> -->
 <link  rel="stylesheet" type="text/css" href="plan_pop.css"></link> 
 <script src="plan_pop.js" type="text/javascript"></script>
 <div id="Medical_Modal" style="display:none;" class="modal">

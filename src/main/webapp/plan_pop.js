@@ -39,3 +39,23 @@ function showVisionModal(){
 	document.getElementById("Vision_Modal").style.display="block";
 }
 
+function showmedical(){
+	document.getElementById("medical_plans").style.display="block";
+	document.getElementById("dental_plans").style.display="none";
+	document.getElementById("vision_plans").style.display="none";
+	document.getElementById("viewcart").style.display="none";
+}
+function showdental(){
+
+	document.getElementById("medical_plans").style.display="none";
+	document.getElementById("dental_plans").style.display="block";
+	document.getElementById("vision_plans").style.display="none";
+	document.getElementById("viewcart").style.display="none";
+}
+function showvision(){
+
+	document.getElementById("medical_plans").style.display="none";
+	document.getElementById("dental_plans").style.display="none";
+	document.getElementById("vision_plans").style.display="block";
+	document.getElementById("viewcart").style.display="none";
+}
