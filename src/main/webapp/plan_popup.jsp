@@ -23,8 +23,8 @@
 		</div>
 		 
 		 <div class="modal-footer">
-		 <form action="addcart">
-      	  		<input type="submit"  value="Checkout">
+		 <form action="nothanks">
+      	  		<input type="submit"  value="No Thanks">
       	  		</form>
 			</div>
 		  	
@@ -49,8 +49,8 @@
 		</div>
 		 <div class="modal-footer">
       	  
-      	  <form action="addcart">
-      	 <input type="submit"  value="Checkout">
+      	  <form action="nothanks">
+      	 <input type="submit"  value="No Thanks">
 		</form>
       	</div>
 	</div>
@@ -74,8 +74,8 @@
 			
 		</div>
 		 <div class="modal-footer">
-      	 	<form action="addcart">
-				<input type="submit" value="Checkout">
+      	 	<form action="nothanks">
+				<input type="submit" value="No Thanks">
 			</form>	 
 			
       	</div>

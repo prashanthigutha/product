@@ -1,5 +1,9 @@
 package com.uneegohs.product.action;
+import com.spring.bean.*;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.server.Session;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.jdbc.DatabaseConnection;
@@ -8,35 +12,44 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Iterator;
 
-@Component
+
+
 public class DisplayPlans extends ActionSupport{
 	private static final long serialVersionUID = 1L;
 	
 	ArrayList<PlanDetailsDto> medicalplanList;
 	ArrayList<PlanDetailsDto> dentalplanList;
 	ArrayList<PlanDetailsDto> visionplanList;
+	ArrayList<PlanDetailsDto> cartplanList;
 	
+	
+	
+
+
 	private String zipcode;
 	private String email;
 	
+	
+	
+	
+	
+public String getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getZipcode() {
-		return zipcode;
-	}
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
 	
 	
-	
-	
-public ArrayList<PlanDetailsDto> getMedicalplanList() {
+	public ArrayList<PlanDetailsDto> getMedicalplanList() {
 		return medicalplanList;
 	}
 	public void setMedicalplanList(ArrayList<PlanDetailsDto> medicalplanList) {
@@ -54,6 +67,23 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 	public void setVisionplanList(ArrayList<PlanDetailsDto> visionplanList) {
 		this.visionplanList = visionplanList;
 	}
+	 public ArrayList<PlanDetailsDto> getCartplanList() {
+			return cartplanList;
+		}
+		public void setCartplanList(ArrayList<PlanDetailsDto> cartplanList) {
+			this.cartplanList = cartplanList;
+		}
+	
+	
+	@Autowired
+	UserSession ses;
+	public void setSes(UserSession ses) {
+		this.ses = ses;
+	}
+	
+	
+
+	
 	
 	
 	private void populateMedicalPlan() throws Exception
@@ -63,10 +93,9 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 		conn=DatabaseConnection.getDBConnection();
 		conn.setAutoCommit(false);
 
-		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
-		
-		
-				medicalplanList=UsersTable.getPlanDetails("Medical", conn);
+				medicalplanList=UsersTable.getPlanDetails("Medical",getZipcode(), conn);
+				
+				
 		
 		    conn.commit();
 		}catch(Exception e)
@@ -88,10 +117,7 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 		conn=DatabaseConnection.getDBConnection();
 		conn.setAutoCommit(false);
 
-		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
-		
-		
-				dentalplanList=UsersTable.getPlanDetails("Dental", conn);
+				dentalplanList=UsersTable.getPlanDetails("Dental",getZipcode(), conn);
 		
 		    conn.commit();
 		}catch(Exception e)
@@ -110,10 +136,7 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 		conn=DatabaseConnection.getDBConnection();
 		conn.setAutoCommit(false);
 
-		//UsersTable.insertUser(conn,"234006","Medical","Short Term Medical Value","abc",66.90f,"Value A","75062");
-		
-		
-				visionplanList=UsersTable.getPlanDetails("Vision", conn);
+				visionplanList=UsersTable.getPlanDetails("Vision",getZipcode(), conn);
 		
 		    conn.commit();
 		}catch(Exception e)
@@ -126,13 +149,53 @@ public ArrayList<PlanDetailsDto> getMedicalplanList() {
 		
 
 	}
+	
+	private void populateViewCart() throws Exception{
+		
+		Connection conn=null;
+		ArrayList<String> list=ses.getCartlist();
+		//Iterator itr=list.iterator();
+		
+		try{
+		conn=DatabaseConnection.getDBConnection();
+		conn.setAutoCommit(false);
+		for(String ls:list)
+		{ 
+		
+				cartplanList=UsersTable.getCartPlanDetails(ls, conn);
+		}
+		    conn.commit();
+		}catch(Exception e)
+		{
+		conn.rollback();
+		}
+		finally{
+		conn.close();
+		}
+		
+		
+	}
+	
+	
+	
+	
+
 public String displayPlans () 
 	{
 		
+	System.out.println (getZipcode());
+	System.out.println(getEmail());
 	try{
+		
+		ses.setEmail(email);
+		ses.setZip(zipcode);
+		
+		
 	populateMedicalPlan();
 	populateDentalPlan();
 	populateVisionPlan();
+	populateViewCart();
+	
 	
 	}catch(Exception e){
 		e.printStackTrace();
@@ -143,4 +206,5 @@ public String displayPlans ()
 	else
 		return "failure";
 }
+
 }

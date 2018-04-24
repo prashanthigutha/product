@@ -56,8 +56,8 @@ $(".modal-footer").click(emptycheck);
 function emptycheck()
 {
 		
-	var email=$("#mail").val();
-	var zip=$("#Zipcode").val();
+	var email=$("#email").val();
+	var zip=$("#zipcode").val();
 	var isitnum=parseInt(zip);
 	if((email=="")||(zip=="") )
 		alert("mandatory fields should not be empty");
@@ -69,3 +69,6 @@ function emptycheck()
 	
 		
 }
+
+
+

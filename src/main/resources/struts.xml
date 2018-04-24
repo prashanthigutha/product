@@ -8,7 +8,7 @@
   <constant name="struts.devMode" value="true" />
   <constant name="struts.objectFactory" value="spring" />
   
-  <package name="default"  extends="json-default">
+  <package name="default"  extends="json-default" namespace="/">
   
     
          
@@ -17,19 +17,29 @@
       <result name="failure">/main.jsp</result> 
          </action>
     
-      <!-- <action name="getplanswithfilters" class="com.uneegohs.product.action.DisplayPlansWithFilters" method="displayPlans">
+    
+    <action name="addtocart" class="com.uneegohs.product.action.addToCart" method="addToCart">
+     <result name="success" type="json"></result>
+     
+      </action>
+      
+       <action name="viewcart" class="com.uneegohs.product.action.DisplayPlans" method="displayPlans">
+      <result name="success" >/planmain.jsp</result>
+      </action>
+      
+       <action name="getplanswithfilters" class="com.uneegohs.product.action.DisplayPlansWithFilters" method="displayPlans">
       <result name="success" >/planmain.jsp</result>
       
-         </action>  -->
+         </action>  
     
     
    
     
-    <action name="addcart" class="com.uneegohs.product.action.AddToCart" method="execute">
+   <!--  <action name="checkout" class="com.uneegohs.product.action.AddToCart" method="execute">
      
       <result name="success" type="redirect">http://ec2-18-219-227-199.us-east-2.compute.amazonaws.com:8080/order.jsp</result>
-      <!--  <result name="failure" >planmain.jsp</result> -->
-    </action> 
+       <result name="failure" >planmain.jsp</result>
+    </action>  -->
      
   </package>
 </struts>

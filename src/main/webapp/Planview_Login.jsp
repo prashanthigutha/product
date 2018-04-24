@@ -1,5 +1,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<%@ taglib uri="/struts-tags" prefix="s" %>
 
 
 <script src="Planview_Log.js" type="text/javascript"></script>
@@ -18,12 +19,12 @@
 				<div>
 
 					<div>
-						<label for="mail">E-mail:</label> <input type="email" id="mail"
+						<label for="mail">E-mail:</label> <input type="email" id="email"
 							name="email" /><br>
 					</div>
 					<div>
 						<label for="zcode">Zipcode:</label> <input type="text"
-							id="Zipcode" name="zipcode" onblur="emptycheck()" />
+							id="zipcode" name="zipcode" onblur="emptycheck()" />
 					</div>
 
 

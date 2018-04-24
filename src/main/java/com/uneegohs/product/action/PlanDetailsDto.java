@@ -2,14 +2,22 @@ package com.uneegohs.product.action;
 
 public class PlanDetailsDto {
 
-	
+	private String product_id;
 	private String planname;
-	
 	private String Coinsurance;
 	private String Deductible;
 	private String Paymentmethod;
 	private String  Maxoutpkt;
 	private String premiumamnt;
+	
+	
+	
+	public String getProduct_id() {
+		return product_id;
+	}
+	public void setProduct_id(String product_id) {
+		this.product_id = product_id;
+	}
 	public String getPlanname() {
 		return planname;
 	}
